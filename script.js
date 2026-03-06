@@ -91,7 +91,7 @@ document.querySelectorAll('.skill-card').forEach(card => {
 });
 
 // Form submission (basic validation)
-const contactForm = document.querySelector('.contact-form');
+/*const contactForm = document.querySelector('.contact-form');
 if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
         e.preventDefault();
@@ -109,7 +109,7 @@ if (contactForm) {
             alert('Please fill in all fields.');
         }
     });
-}
+}*/
 
 // Typing effect for hero title (optional enhancement)
 const typingText = document.querySelector('.gradient-text');
