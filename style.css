@@ -1342,3 +1342,51 @@ font-size:24px;
 body{
 overflow-x:hidden;
 }
+
+/* ============================= */
+/* MOBILE HERO IMPROVEMENT */
+/* ============================= */
+
+@media (max-width:768px){
+
+.hero-container{
+display:flex;
+flex-direction:column;
+align-items:center;
+text-align:center;
+gap:30px;
+}
+
+.hero-left{
+width:100%;
+}
+
+.hero-right{
+width:100%;
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:15px;
+}
+
+.hero h1{
+font-size:34px;
+}
+
+.hero p{
+font-size:16px;
+}
+
+.btn{
+width:90%;
+max-width:320px;
+}
+
+.stats{
+display:flex;
+justify-content:center;
+gap:30px;
+flex-wrap:wrap;
+}
+
+}
