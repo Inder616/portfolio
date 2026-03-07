@@ -1359,11 +1359,11 @@ gap:30px;
 }
 
 .hero-left{
-width:100%;
+width:55%;
 }
 
 .hero-right{
-width:100%;
+width:45%;
 display:flex;
 justify-content:center;
 flex-wrap:wrap;
