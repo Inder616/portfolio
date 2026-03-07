@@ -1251,3 +1251,94 @@ background:#020617;
 background:linear-gradient(#38bdf8,#0ea5e9);
 border-radius:10px;
 }
+
+/*images responsive */
+img{
+max-width:100%;
+height:auto;
+display:block;
+}
+
+/*Responsive grid for skills & projects*/
+.skills-grid,
+.projects-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+}
+
+/*Tablet optimization*/
+@media (max-width:1024px){
+
+.hero h1{
+font-size:40px;
+}
+
+.hero p{
+font-size:18px;
+}
+
+.navbar{
+padding:18px 6%;
+}
+
+}
+
+/*Mobile optimization*/
+@media (max-width:768px){
+
+.hero{
+text-align:center;
+}
+
+.hero h1{
+font-size:32px;
+}
+
+.hero p{
+font-size:16px;
+padding:0 10px;
+}
+
+.btn{
+width:100%;
+margin-bottom:12px;
+}
+
+.stats{
+flex-direction:column;
+gap:20px;
+}
+
+.navbar{
+padding:15px 20px;
+}
+
+.section-title{
+font-size:28px;
+}
+
+}
+
+/*Small phone optimization*/
+
+@media (max-width:480px){
+
+.hero h1{
+font-size:26px;
+}
+
+.hero p{
+font-size:14px;
+}
+
+.section-title{
+font-size:24px;
+}
+
+}
+
+/*Prevent horizontal scrolling*/
+body{
+overflow-x:hidden;
+}
