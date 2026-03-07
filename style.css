@@ -1351,7 +1351,8 @@ overflow-x:hidden;
 
 .hero-container{
 display:flex;
-flex-direction:column;
+flex-direction:row;
+flex-wrap:wrap;
 align-items:center;
 text-align:center;
 gap:30px;
