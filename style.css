@@ -1285,7 +1285,24 @@ font-size:18px;
 .navbar{
 padding:18px 6%;
 }
+.about-content{
+display:flex;
+flex-direction:column;
+align-items:center;
+text-align:center;
+gap:40px;
+}
 
+.about-text{
+width:100%;
+}
+
+.about-image{
+width:100%;
+display:flex;
+justify-content:center;
+}
+    
 }
 
 /*Mobile optimization*/
@@ -1316,21 +1333,15 @@ padding:15px 20px;
 .section-title{
 font-size:28px;
 }
-
 .skills-grid{
-display:flex;
-overflow-x:auto;
+display:grid;
+grid-template-columns:repeat(2,1fr);
 gap:20px;
-padding-bottom:10px;
-scroll-snap-type:x mandatory;
 }
-
-.skill-card{
-min-width:260px;
-flex-shrink:0;
-scroll-snap-align:start;
+.hero-visual{
+display:none;
 }
-
+    
 }
 
 /*Small phone optimization*/
