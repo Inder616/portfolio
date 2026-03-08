@@ -129,7 +129,11 @@ body {
     border-bottom: 1px solid rgba(56, 189, 248, 0.1);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
 }
-
+.navbar.scrolled{
+padding:12px 8%;
+background:rgba(2,6,23,0.98);
+box-shadow:0 10px 30px rgba(0,0,0,0.5);
+}
 .logo {
     font-size: 24px;
     font-weight: 700;
@@ -247,13 +251,15 @@ body {
     animation: fadeInUp 1.2s ease;
 }
 
-.gradient-text {
-    background: var(--gradient-primary);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    display: block;
-    margin-top: 10px;
+.gradient-text{
+background:linear-gradient(90deg,#38bdf8,#8b5cf6,#06b6d4);
+background-size:200% auto;
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+background-clip:text;
+animation:gradientMove 5s linear infinite;
+display:block;
+margin-top:10px;
 }
 
 .hero-description {
@@ -464,6 +470,9 @@ body {
     opacity:0;
     transform:translateY(40px);
     animation: reveal 1s ease forwards;
+}
+.section:hover{
+background:rgba(56,189,248,0.03);
 }
 
 .section-header {
