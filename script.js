@@ -200,5 +200,14 @@ function animateCircles() {
 animateCircles();
 
 console.log('Portfolio loaded successfully! 🚀');
+animateCircles();
 
+console.log('Portfolio loaded successfully! 🚀');
+
+window.addEventListener("scroll", () => {
+const navbar = document.querySelector(".navbar");
+if(navbar){
+navbar.classList.toggle("scrolled", window.scrollY > 50);
+}
+});
 
