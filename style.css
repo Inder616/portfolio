@@ -628,7 +628,7 @@ body {
     backdrop-filter: blur(15px);
     padding: 40px 30px;
     border-radius: 20px;
-    transition: all 0.3s ease;
+    transition: transition: transform .3s ease, box-shadow .3s ease;
     border: 1px solid rgba(56, 189, 248, 0.1);
     position: relative;
     overflow: hidden;
@@ -1112,18 +1112,19 @@ body {
         margin-top: 50px;
     }
 
-    .about-content{
+   .about-content{
     display:flex;
-    flex-wrap:wrap;
+    flex-direction:row;
+    align-items:center;
     gap:40px;
     }
 
-    .about-text{
-    flex:1 1 55%;
+   .about-text{
+    flex:1;
     }
 
     .about-image{
-    flex:1 1 45%;
+    flex:1;
     }
 
     .contact-content {
@@ -1196,13 +1197,6 @@ body {
         font-size: 32px;
     }
 
-    .skills-grid{
-    grid-template-columns: repeat(2,1fr);
-    }
-
-    .projects-grid{
-    grid-template-columns:1fr;
-    }
 
     .footer-content {
         flex-direction: column;
@@ -1315,17 +1309,26 @@ width:100%;
 margin-bottom:12px;
 }
 
-.stats{
-flex-direction:column;
-gap:20px;
-}
-
 .navbar{
 padding:15px 20px;
 }
 
 .section-title{
 font-size:28px;
+}
+
+.skills-grid{
+display:flex;
+overflow-x:auto;
+gap:20px;
+padding-bottom:10px;
+scroll-snap-type:x mandatory;
+}
+
+.skill-card{
+min-width:260px;
+flex-shrink:0;
+scroll-snap-align:start;
 }
 
 }
@@ -1393,11 +1396,8 @@ width:90%;
 max-width:320px;
 }
 
-.stats{
-display:flex;
-justify-content:center;
-gap:30px;
-flex-wrap:wrap;
 }
-
+/* Hide horizontal scrollbar for skills */
+.skills-grid::-webkit-scrollbar{
+display:none;
 }
