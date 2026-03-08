@@ -1333,15 +1333,32 @@ padding:15px 20px;
 .section-title{
 font-size:28px;
 }
+
+.about-content{
+display:flex;
+flex-direction:column;
+align-items:center;
+text-align:center;
+gap:30px;
+}
+
+.about-image img{
+width:70%;
+max-width:320px;
+margin:auto;
+display:block;
+}
+
 .skills-grid{
 display:grid;
 grid-template-columns:repeat(2,1fr);
 gap:20px;
 }
+
 .hero-visual{
 display:none;
 }
-    
+
 }
 
 /*Small phone optimization*/
