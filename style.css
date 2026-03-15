@@ -1254,353 +1254,186 @@ pointer-events:none;
 z-index:0;
 }
 
-Remove your duplicate blocks:
+
+/* CUSTOM SCROLLBAR */
+::-webkit-scrollbar{
+width:8px;
+}
+
+::-webkit-scrollbar-track{
+background:#020617;
+}
+
+::-webkit-scrollbar-thumb{
+background:linear-gradient(#38bdf8,#0ea5e9);
+border-radius:10px;
+}
+
+/*images responsive */
+img{
+max-width:100%;
+height:auto;
+display:block;
+}
+
+
 /*Tablet optimization*/
+@media (max-width:1024px){
+
+.hero h1{
+font-size:40px;
+}
+
+.hero p{
+font-size:18px;
+}
+
+.navbar{
+padding:18px 6%;
+}
+.about-content{
+display:flex;
+flex-direction:column;
+align-items:center;
+text-align:center;
+gap:40px;
+}
+
+.about-text{
+width:100%;
+}
+
+.about-image{
+width:100%;
+display:flex;
+justify-content:center;
+}
+    
+}
+
 /*Mobile optimization*/
+@media (max-width:768px){
+
+.hero{
+text-align:center;
+}
+
+.hero h1{
+font-size:32px;
+}
+
+.hero p{
+font-size:16px;
+padding:0 10px;
+}
+
+.btn{
+width:100%;
+margin-bottom:12px;
+}
+
+.navbar{
+padding:15px 20px;
+}
+
+.section-title{
+font-size:28px;
+}
+
+.about-content{
+display:flex;
+flex-direction:column;
+align-items:center;
+text-align:center;
+gap:30px;
+}
+
+.about-image img{
+width:100%;
+max-width:320px;
+margin:auto;
+display:block;
+}
+
+.skills-grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:20px;
+}
+
+.hero-visual{
+display:none;
+}
+.image-frame{
+max-width:260px;
+}
+}
+
 /*Small phone optimization*/
+
+@media (max-width:480px){
+
+.hero h1{
+font-size:26px;
+}
+
+.hero p{
+font-size:14px;
+}
+
+.section-title{
+font-size:24px;
+}
+
+}
+
+/*Prevent horizontal scrolling*/
+body{
+overflow-x:hidden;
+}
+
+/* ============================= */
 /* MOBILE HERO IMPROVEMENT */
-Paste this whole block at the end of your CSS.
-/* =========================================================
-   FINAL RESPONSIVE + ALIGNMENT FIX (ANDROID SAFE VERSION)
-   ========================================================= */
+/* ============================= */
 
-/* Global safety */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+@media (max-width:768px){
+
+.hero-container{
+display:flex;
+flex-direction:row;
+flex-wrap:wrap;
+align-items:center;
+text-align:center;
+gap:30px;
 }
 
-html,
-body {
-  width: 100%;
-  max-width: 100%;
-  overflow-x: hidden;
+.hero-left{
+width:55%;
 }
 
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
+.hero-right{
+width:45%;
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:15px;
 }
 
-/* Better container behavior on all screens */
-.container {
-  width: min(1200px, 100% - 40px);
-  margin-inline: auto;
+.hero h1{
+font-size:34px;
 }
 
-.section,
-.footer,
-.hero,
-.navbar {
-  width: 100%;
+.hero p{
+font-size:16px;
 }
 
-/* Prevent hard-width grid overflow */
-.skills-grid {
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 24px;
+.btn{
+width:90%;
+max-width:320px;
 }
 
-.projects-grid {
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 28px;
 }
-
-/* Smoother, cleaner transitions */
-.btn,
-.skill-card,
-.project-card,
-.contact-method,
-.footer-social a {
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+/* Hide horizontal scrollbar for skills */
+.skills-grid::-webkit-scrollbar{
+display:none;
 }
-
-/* Better readability */
-.hero-title {
-  font-size: clamp(2rem, 5vw, 3.5rem);
-  line-height: 1.2;
-}
-
-.section-title {
-  font-size: clamp(1.6rem, 4vw, 2.6rem);
-  line-height: 1.25;
-}
-
-/* Improve form fit on narrow devices */
-.contact-form {
-  width: 100%;
-  max-width: 100%;
-}
-
-/* Cursor glow off on touch devices (fixes mobile lag/jitter) */
-@media (hover: none) {
-  body::before {
-    display: none;
-  }
-}
-
-/* ---------------------------
-   Tablet (<= 1024px)
---------------------------- */
-@media (max-width: 1024px) {
-  .navbar {
-    padding: 16px 6%;
-  }
-
-  .hero {
-    padding: 88px 6% 48px;
-  }
-
-  .section {
-    padding: 72px 6%;
-  }
-
-  .hero-content {
-    flex-direction: column;
-    text-align: center;
-    gap: 36px;
-  }
-
-  .hero-description {
-    max-width: 680px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .hero-buttons,
-  .hero-stats {
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-
-  .about-content,
-  .contact-content {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 36px;
-  }
-
-  .about-text,
-  .about-image,
-  .contact-info,
-  .contact-form-wrapper {
-    width: 100%;
-  }
-
-  .project-content {
-    padding: 28px 24px;
-  }
-
-  .contact-form {
-    padding: 30px 24px;
-  }
-}
-
-/* ---------------------------
-   Mobile (<= 768px)
---------------------------- */
-@media (max-width: 768px) {
-  .navbar {
-    padding: 14px 5%;
-  }
-
-  .logo {
-    font-size: 20px;
-  }
-
-  .nav-menu {
-    position: fixed;
-    top: 64px;
-    left: -100%;
-    width: 100%;
-    background: rgba(2, 6, 23, 0.98);
-    backdrop-filter: blur(10px);
-    padding: 22px;
-    gap: 14px;
-    transition: left 0.3s ease;
-  }
-
-  .nav-menu.active {
-    left: 0;
-  }
-
-  .hero {
-    min-height: auto;
-    text-align: center;
-    padding: 72px 5% 40px;
-  }
-
-  .hero-content {
-    gap: 24px;
-  }
-
-  .hero-title {
-    font-size: clamp(1.75rem, 8vw, 2.25rem);
-  }
-
-  .hero-description {
-    font-size: 15px;
-    line-height: 1.7;
-    margin-bottom: 24px;
-  }
-
-  .hero-buttons {
-    width: 100%;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 12px;
-    margin-bottom: 28px;
-  }
-
-  .btn {
-    width: 100%;
-    justify-content: center;
-    padding: 13px 20px;
-  }
-
-  .hero-stats {
-    width: 100%;
-    gap: 16px;
-    justify-content: center;
-  }
-
-  .stat-item {
-    flex: 1 1 42%;
-    min-width: 120px;
-    text-align: center;
-  }
-
-  .stat-item h3 {
-    font-size: 28px;
-  }
-
-  .hero-visual {
-    display: none;
-  }
-
-  .section {
-    padding: 56px 5%;
-  }
-
-  .section-header {
-    margin-bottom: 38px;
-  }
-
-  .skills-grid,
-  .projects-grid {
-    grid-template-columns: 1fr;
-    gap: 18px;
-  }
-
-  .project-image {
-    height: 190px;
-  }
-
-  .project-content {
-    padding: 22px 18px;
-  }
-
-  .project-tags {
-    flex-wrap: wrap;
-  }
-
-  .contact-method {
-    padding: 16px;
-    gap: 14px;
-    text-align: left;
-  }
-
-  .contact-form {
-    padding: 22px 16px;
-  }
-
-  .footer {
-    padding: 44px 5% 24px;
-  }
-
-  .footer-content {
-    flex-direction: column;
-    text-align: center;
-    gap: 18px;
-    margin-bottom: 24px;
-  }
-
-  .footer-links {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  /* force these to stack if they exist in your HTML */
-  .hero-container,
-  .hero-left,
-  .hero-right {
-    width: 100% !important;
-    flex-direction: column !important;
-    text-align: center !important;
-  }
-
-  /* reduce heavy background effects on mobile */
-  .circle {
-    filter: blur(50px);
-    opacity: 0.12;
-  }
-}
-
-/* ---------------------------
-   Small phones (<= 480px)
---------------------------- */
-@media (max-width: 480px) {
-  .container {
-    width: min(1200px, 100% - 24px);
-  }
-
-  .navbar,
-  .hero,
-  .section,
-  .footer {
-    padding-left: 16px;
-    padding-right: 16px;
-  }
-
-  .hero-title {
-    font-size: clamp(1.55rem, 7.4vw, 1.9rem);
-  }
-
-  .hero-description {
-    font-size: 14px;
-  }
-
-  .section-title {
-    font-size: clamp(1.35rem, 6.2vw, 1.65rem);
-  }
-
-  .floating-card {
-    padding: 12px 14px;
-    border-radius: 14px;
-  }
-
-  .floating-card i {
-    font-size: 18px;
-  }
-
-  .floating-card span {
-    font-size: 12px;
-  }
-
-  .contact-form {
-    border-radius: 14px;
-  }
-
-  .method-icon {
-    width: 48px;
-    height: 48px;
-  }
-
-  .method-icon i {
-    font-size: 18px;
-  }
-}
-
