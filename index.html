@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Inder | Data Analyst Portfolio</title>
     <link rel="stylesheet" href="style.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
@@ -17,7 +17,7 @@
     </div>
 
     <nav class="navbar">
-    <h2 class="logo">Data<span class="logo-bracket">.</span>Portfolio</h2>
+    <h2 class="logo">Inder<span class="logo-bracket">.</span>Data</h2>
         <ul class="nav-menu">
             <li><a href="#about" class="nav-link">About</a></li>
             <li><a href="#skills" class="nav-link">Skills</a></li>
@@ -114,14 +114,14 @@
                     </p>
                     <div class="about-highlights">
                         <div class="highlight-item">
-                            <i class="fas fa-graduation-cap"></i>
+                            <div class="highlight-icon-wrapper"><i class="fas fa-graduation-cap"></i></div>
                             <div>
                                 <h4>Education</h4>
                                 <p>MBA in Business Analytics & Marketing</p>
                             </div>
                         </div>
                         <div class="highlight-item">
-                            <i class="fas fa-lightbulb"></i>
+                            <div class="highlight-icon-wrapper"><i class="fas fa-lightbulb"></i></div>
                             <div>
                                 <h4>Core Focus</h4>
                                 <p>KPI Reporting, Data Cleaning, EDA</p>
@@ -189,8 +189,8 @@
                 <h2 class="section-title">Certifications</h2>
                 <div class="title-underline"></div>
             </div>
-            <div class="cert-grid" style="display: flex; gap: 30px; justify-content: center; flex-wrap: wrap;">
-                <a href="https://www.coursera.org/account/accomplishments/specialization/certificate/LX5YWSSW2JHQ" target="_blank" class="contact-method" style="flex: 1; min-width: 300px; max-width: 500px;">
+            <div class="cert-grid">
+                <a href="https://www.coursera.org/account/accomplishments/specialization/certificate/LX5YWSSW2JHQ" target="_blank" class="contact-method cert-card">
                     <div class="method-icon">
                         <i class="fas fa-certificate"></i>
                     </div>
@@ -199,7 +199,7 @@
                         <p>Coursera Certification</p>
                     </div>
                 </a>
-                <a href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/9PBTqmSxAf6zZTseP/io9DzWKe3PTsiS6GG_9PBTqmSxAf6zZTseP_3tYKWydno29Lmw8eb_1741706399795_completion_certificate.pdf" target="_blank" class="contact-method" style="flex: 1; min-width: 300px; max-width: 500px;">
+                <a href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/9PBTqmSxAf6zZTseP/io9DzWKe3PTsiS6GG_9PBTqmSxAf6zZTseP_3tYKWydno29Lmw8eb_1741706399795_completion_certificate.pdf" target="_blank" class="contact-method cert-card">
                     <div class="method-icon">
                         <i class="fas fa-award"></i>
                     </div>
@@ -223,7 +223,7 @@
                 
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="image_fee6ca.jpg" alt="Patient Appointment Delay Dashboard" style="width: 100%; height: 100%; object-fit: cover;">
+                        <img src="image_fee6ca.jpg" alt="Patient Appointment Delay Dashboard">
                         <div class="project-overlay">
                             <a href="https://github.com/Inder616/Patient-Appointment-Delay-No-Show-Analysis" target="_blank"><i class="fas fa-external-link-alt"></i></a>
                         </div>
@@ -234,10 +234,10 @@
                             <span class="tag">Data Modeling</span>
                         </div>
                         <h3>Healthcare: No-Show Analysis</h3>
-                        <p>
-                            <strong>Business Problem:</strong> Clinics were losing revenue due to unpredicted missed appointments. <br><br>
-                            <strong>Key Insight:</strong> Analyzed 111k records to reveal that waiting times >5 days spiked no-show rates to 31%. Recommending a scheduling optimization that prioritizes sub-5-day bookings could reduce no-shows by ~30%.
-                        </p>
+                        <div class="project-description">
+                            <p><strong>Business Problem:</strong> Clinics were losing revenue due to unpredicted missed appointments.</p>
+                            <p><strong>Key Insight:</strong> Analyzed 111k records to reveal that waiting times >5 days spiked no-show rates to 31%. Recommending a scheduling optimization that prioritizes sub-5-day bookings could reduce no-shows by ~30%.</p>
+                        </div>
                         <div class="project-footer">
                             <a href="https://github.com/Inder616/Patient-Appointment-Delay-No-Show-Analysis" target="_blank" class="project-link">
                                 <span>View GitHub Repository</span>
@@ -249,7 +249,7 @@
 
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="image_fee3e1.jpg" alt="Netflix Strategy Dashboard" style="width: 100%; height: 100%; object-fit: cover;">
+                         <img src="image_fee3e1.jpg" alt="Netflix Strategy Dashboard">
                         <div class="project-overlay">
                             <a href="https://github.com/Inder616/Netflix-content-strategy-dashboard" target="_blank"><i class="fas fa-external-link-alt"></i></a>
                         </div>
@@ -260,10 +260,10 @@
                             <span class="tag">Power BI</span>
                         </div>
                         <h3>Netflix Content Strategy</h3>    
-                        <p>
-                            <strong>Business Problem:</strong> Understanding content saturation and pinpointing what genres generate the highest ROI globally. <br><br>
-                            <strong>Key Insight:</strong> Discovered an 80% shift toward TV Shows over Movies. Analyzed 19k+ titles to prove that Animation and Comedy yield the highest ROI globally, offering a clear roadmap for future content acquisition.
-                        </p>
+                        <div class="project-description">
+                            <p><strong>Business Problem:</strong> Understanding content saturation and pinpointing what genres generate the highest ROI globally.</p>
+                            <p><strong>Key Insight:</strong> Discovered an 80% shift toward TV Shows over Movies. Analyzed 19k+ titles to prove that Animation and Comedy yield the highest ROI globally, offering a clear roadmap for future content acquisition.</p>
+                        </div>
                         <div class="project-footer">
                             <a href="https://github.com/Inder616/Netflix-content-strategy-dashboard" target="_blank" class="project-link">
                                 <span>View GitHub Repository</span>
@@ -275,7 +275,7 @@
 
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="Screenshot 2026-06-17 181308.png" alt="Global Data Jobs Salary Dashboard" style="width: 100%; height: 100%; object-fit: cover;">
+                         <img src="Screenshot 2026-06-17 181308.png" alt="Global Data Jobs Salary Dashboard">
                         <div class="project-overlay">
                             <a href="https://github.com/Inder616/Global-Data-Jobs-Salary-Dashboard" target="_blank"><i class="fas fa-external-link-alt"></i></a>
                         </div>
@@ -285,11 +285,11 @@
                             <span class="tag">Advanced Excel</span>
                             <span class="tag">Pivot Tables</span>
                         </div>
-                        <h3>Global Data Jobs & Salary Tracker</h3>
-                        <p>
-                            <strong>Business Problem:</strong> Job seekers lack centralized, up-to-date insight into top-paying data roles and required skills across 111 countries. <br><br>
-                            <strong>Key Insight:</strong> Built a dynamic Excel dashboard revealing a $90k median salary for DA roles. Identified SQL and Python as the absolute dominant skill pair, with Senior Data Scientists earning a 72% premium.
-                        </p>
+                        <h3>Global Data Jobs Tracker</h3>
+                        <div class="project-description">
+                             <p><strong>Business Problem:</strong> Job seekers lack centralized, up-to-date insight into top-paying data roles and required skills across 111 countries.</p>
+                             <p><strong>Key Insight:</strong> Built a dynamic Excel dashboard revealing a $90k median salary for DA roles. Identified SQL and Python as the absolute dominant skill pair, with Senior Data Scientists earning a 72% premium.</p>
+                        </div>
                         <div class="project-footer">
                             <a href="https://github.com/Inder616/Global-Data-Jobs-Salary-Dashboard" target="_blank" class="project-link">
                                 <span>View GitHub Repository</span>
@@ -377,7 +377,7 @@
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-logo">
-                <h3>Data.Portfolio</h3>
+                <h3>Inder.Data</h3>
                 <p>Turning Data into Actionable Business Insights</p>
             </div>
             <div class="footer-links">
