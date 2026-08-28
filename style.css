@@ -103,12 +103,20 @@ a:hover .chev, .btn:hover .chev { transform: translateX(3px); }
    ============================================================ */
 .nav-bar {
   position: sticky; top: 0; z-index: 100;
-  background: rgba(0, 0, 0, .72);
-  backdrop-filter: saturate(180%) blur(20px);
+  background: rgba(0, 0, 0, .88);
   border-bottom: 1px solid transparent;
   transition: border-color .4s var(--ease), background .4s var(--ease);
 }
-.nav-bar.is-stuck { border-bottom-color: var(--hair-2); background: rgba(0, 0, 0, .9); }
+.nav-bar.is-stuck { border-bottom-color: var(--hair-2); background: rgba(0, 0, 0, .94); }
+
+@supports ((backdrop-filter: blur(20px)) or (-webkit-backdrop-filter: blur(20px))) {
+  .nav-bar {
+    background: rgba(0, 0, 0, .72);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    backdrop-filter: saturate(180%) blur(20px);
+  }
+  .nav-bar.is-stuck { background: rgba(0, 0, 0, .9); }
+}
 
 .nav-inner {
   max-width: var(--shell);
@@ -394,6 +402,7 @@ a:hover .chev, .btn:hover .chev { transform: translateX(3px); }
   font-size: var(--t-cap); font-weight: 500;
   color: #fff;
   background: rgba(0, 0, 0, .6);
+  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   padding: 5px 12px;
   border-radius: var(--r-pill);
@@ -516,10 +525,45 @@ a:hover .chev, .btn:hover .chev { transform: translateX(3px); }
 .stack {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: var(--s6) var(--s7);
-  margin-bottom: var(--s7);
+  gap: var(--s4);
+  margin-bottom: var(--s8);
 }
-.stack-group { min-width: 0; }
+
+.stack-group {
+  min-width: 0;
+  position: relative;
+  overflow: hidden;
+  background: var(--surface);
+  border: 1px solid var(--hair-2);
+  border-radius: var(--r-card);
+  padding: var(--s6);
+  transition: border-color .4s var(--ease), transform .4s var(--ease);
+}
+.stack-group > * { position: relative; z-index: 1; }
+
+/* hairline that lights up on hover */
+.stack-group::after {
+  content: "";
+  position: absolute; top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--blue), transparent);
+  opacity: 0;
+  transition: opacity .45s var(--ease);
+  z-index: 2;
+}
+/* cursor spotlight, same idea as the project cards */
+.stack-group::before {
+  content: "";
+  position: absolute; inset: 0;
+  background: radial-gradient(360px circle at var(--mx, 50%) var(--my, 0%),
+              rgba(10, 132, 255, .09), transparent 62%);
+  opacity: 0;
+  transition: opacity .45s var(--ease);
+  pointer-events: none;
+  z-index: 0;
+}
+.stack-group:hover { border-color: var(--hair); transform: translateY(-3px); }
+.stack-group:hover::after, .stack-group:hover::before { opacity: 1; }
+
 .stack-name {
   font-size: var(--t-md);
   font-weight: 600;
@@ -529,7 +573,7 @@ a:hover .chev, .btn:hover .chev { transform: translateX(3px); }
 .stack-note {
   font-size: var(--t-sm);
   color: var(--text-2);
-  margin-bottom: var(--s4);
+  margin-bottom: var(--s5);
 }
 
 .chips { display: flex; flex-wrap: wrap; gap: 8px; }
@@ -545,11 +589,28 @@ a:hover .chev, .btn:hover .chev { transform: translateX(3px); }
               color .25s var(--ease), transform .25s var(--ease);
 }
 .chips li:hover {
-  background: rgba(10, 132, 255, .14);
-  border-color: rgba(10, 132, 255, .45);
+  background: rgba(10, 132, 255, .16);
+  border-color: rgba(10, 132, 255, .5);
   color: #fff;
   transform: translateY(-2px);
 }
+
+/* Chips deal themselves in when the card arrives. Base state is visible, so a
+   JS failure costs the animation, never the content. */
+@keyframes chipIn {
+  from { opacity: 0; transform: translateY(10px) scale(.96); }
+  to   { opacity: 1; transform: none; }
+}
+.stack-group.is-in .chips li { animation: chipIn .45s var(--ease) backwards; }
+.stack-group.is-in .chips li:nth-child(1) { animation-delay: .10s; }
+.stack-group.is-in .chips li:nth-child(2) { animation-delay: .15s; }
+.stack-group.is-in .chips li:nth-child(3) { animation-delay: .20s; }
+.stack-group.is-in .chips li:nth-child(4) { animation-delay: .25s; }
+.stack-group.is-in .chips li:nth-child(5) { animation-delay: .30s; }
+.stack-group.is-in .chips li:nth-child(6) { animation-delay: .35s; }
+.stack-group.is-in .chips li:nth-child(7) { animation-delay: .40s; }
+.stack-group.is-in .chips li:nth-child(8) { animation-delay: .45s; }
+.stack-group.is-in .chips li:nth-child(n+9) { animation-delay: .50s; }
 
 .creds { border-top: 1px solid var(--hair-2); }
 .creds li { border-bottom: 1px solid var(--hair-2); }
@@ -668,6 +729,7 @@ a:hover .chev, .btn:hover .chev { transform: translateX(3px); }
 .lightbox {
   position: fixed; inset: 0; z-index: 300;
   background: rgba(0, 0, 0, .94);
+  -webkit-backdrop-filter: blur(20px);
   backdrop-filter: blur(20px);
   display: flex; align-items: center; justify-content: center;
   padding: var(--s5);
@@ -703,7 +765,11 @@ body.is-locked { overflow: hidden; }
 /* ============================================================
    Motion — one idea: a slow rise
    ============================================================ */
-.js [data-rise], .js .reveal { opacity: 0; transform: translateY(24px); }
+html.reveal-armed:not(.reveal-done) [data-rise],
+html.reveal-armed:not(.reveal-done) .reveal {
+  opacity: 0;
+  transform: translateY(24px);
+}
 .is-in {
   opacity: 1; transform: none;
   transition: opacity 1s var(--ease), transform 1s var(--ease);
@@ -725,7 +791,8 @@ body.is-locked { overflow: hidden; }
     position: absolute; left: 0; right: 0; top: 100%;
     flex-direction: column; gap: 0;
     background: rgba(0, 0, 0, .97);
-    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--hair-2);
     padding: var(--s2) var(--s5) var(--s5);
     display: none;
@@ -748,7 +815,7 @@ body.is-locked { overflow: hidden; }
     animation-iteration-count: 1 !important;
     transition-duration: .001ms !important;
   }
-  .js [data-rise], .js .reveal { opacity: 1; transform: none; }
+  [data-rise], .reveal { opacity: 1 !important; transform: none !important; }
 }
 
 @media print {
