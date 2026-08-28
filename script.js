@@ -6,6 +6,16 @@
 (function () {
   'use strict';
 
+  var docEl = document.documentElement;
+
+  /* If anything below throws, show the content and carry on. A broken
+     animation is survivable; an invisible page is not. */
+  function revealEverything() {
+    docEl.classList.add('reveal-done');
+  }
+
+  try {
+
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* -------------------------------------------------------- */
@@ -289,7 +299,7 @@
   /* Cursor spotlight on cards (pointer devices only)         */
   /* -------------------------------------------------------- */
   if (!reduced && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
-    document.querySelectorAll('.case').forEach(function (card) {
+    document.querySelectorAll('.case, .stack-group').forEach(function (card) {
       var queued = false;
       var lastX = 0, lastY = 0;
 
@@ -333,4 +343,13 @@
   /* -------------------------------------------------------- */
   var year = document.getElementById('year');
   if (year) year.textContent = new Date().getFullYear();
+
+  /* We got here, so the reveal system is running. Stand the failsafe down. */
+  window.clearTimeout(window.__revealFailsafe);
+
+  } catch (err) {
+    revealEverything();
+    window.clearTimeout(window.__revealFailsafe);
+    if (window.console && console.error) console.error('portfolio init failed:', err);
+  }
 })();
