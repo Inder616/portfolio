@@ -69,7 +69,7 @@
   }
 
   var targets = document.querySelectorAll(
-    '.sec-head, .stat, .case, .tool, .creds li, .tl-item, ' +
+    '.sec-head, .stat, .case, .stack-group, .creds li, .tl-item, ' +
     '.about-copy, .portrait, .channels, .form, .sec-foot'
   );
 
