@@ -29,16 +29,16 @@
   --t-lg:    24px;
   --t-lede:  clamp(1.0625rem, 1.6vw, 1.375rem);
   --t-sec:   clamp(2rem, 5vw, 3.5rem);
-  --t-hero:  clamp(2.5rem, 7.4vw, 5.25rem);
+  --t-hero:  clamp(1.95rem, 7.2vw, 5.25rem);
   --t-huge:  clamp(3rem, 7vw, 4.75rem);
 
   --s1: 4px;  --s2: 8px;  --s3: 12px; --s4: 16px; --s5: 24px;
   --s6: 32px; --s7: 48px; --s8: 64px; --s9: 96px;
-  --s10: clamp(80px, 12vw, 160px);
+  --s10: clamp(52px, 6vw, 88px);
 
   --r-card: 20px;
   --r-pill: 980px;
-  --shell: 1120px;
+  --shell: 1180px;
 
   --ease: cubic-bezier(.28, .11, .32, 1);
 }
@@ -175,6 +175,13 @@ a:hover .chev, .btn:hover .chev { transform: translateX(3px); }
 .btn-blue { background: var(--blue); color: #fff; }
 .btn-blue:hover { background: var(--blue-lift); }
 
+.btn-line {
+  background: transparent;
+  color: var(--text);
+  box-shadow: inset 0 0 0 1px var(--hair);
+}
+.btn-line:hover { box-shadow: inset 0 0 0 1px rgba(255,255,255,.28); }
+
 .btn-plain { background: transparent; color: var(--blue); padding-left: 8px; padding-right: 8px; }
 .btn-plain:hover { color: var(--blue-lift); }
 
@@ -186,7 +193,7 @@ a:hover .chev, .btn:hover .chev { transform: translateX(3px); }
 .hero {
   max-width: var(--shell);
   margin: 0 auto;
-  padding: clamp(72px, 11vw, 140px) var(--s5) var(--s9);
+  padding: clamp(36px, 5vw, 68px) var(--s5) var(--s7);
   text-align: center;
 }
 
@@ -206,14 +213,14 @@ a:hover .chev, .btn:hover .chev { transform: translateX(3px); }
   font-size: var(--t-lede);
   color: var(--text-2);
   max-width: 62ch;
-  margin: 0 auto var(--s7);
+  margin: 0 auto var(--s6);
   line-height: 1.55;
 }
 
 .hero-actions {
   display: flex; justify-content: center; flex-wrap: wrap;
   gap: var(--s3);
-  margin-bottom: clamp(56px, 8vw, 96px);
+  margin-bottom: clamp(32px, 4vw, 48px);
 }
 
 /* ============================================================
@@ -304,7 +311,7 @@ a:hover .chev, .btn:hover .chev { transform: translateX(3px); }
 /* ============================================================
    Stats strip
    ============================================================ */
-.strip { padding: var(--s9) 0; border-top: 1px solid var(--hair-2); }
+.strip { padding: var(--s7) 0; border-top: 1px solid var(--hair-2); }
 .stat { min-width: 0; }
 .about-copy { min-width: 0; }
 
@@ -331,14 +338,14 @@ a:hover .chev, .btn:hover .chev { transform: translateX(3px); }
 .section { padding: var(--s10) 0; }
 .section-alt { background: var(--surface); }
 
-.sec-head { max-width: 46ch; margin-bottom: clamp(48px, 6vw, 80px); }
+.sec-head { max-width: 54ch; margin-bottom: clamp(26px, 3vw, 40px); }
 .sec-head-center { margin-left: auto; margin-right: auto; text-align: center; }
 
 .sec-title {
   font-size: var(--t-sec);
   font-weight: 600;
   letter-spacing: -0.038em;
-  margin-bottom: var(--s5);
+  margin-bottom: var(--s4);
 }
 .sec-lede { font-size: var(--t-lede); color: var(--text-2); line-height: 1.55; }
 
@@ -484,9 +491,9 @@ a:hover .chev, .btn:hover .chev { transform: translateX(3px); }
 .timeline { display: grid; }
 .tl-item {
   display: grid;
-  grid-template-columns: 180px minmax(0, 1fr);
+  grid-template-columns: 170px minmax(0, 1fr);
   gap: var(--s6);
-  padding: var(--s7) 0;
+  padding: var(--s6) 0;
   border-top: 1px solid var(--hair-2);
 }
 .tl-item:last-child { border-bottom: 1px solid var(--hair-2); }
@@ -506,15 +513,43 @@ a:hover .chev, .btn:hover .chev { transform: translateX(3px); }
 /* ============================================================
    Skills + credentials
    ============================================================ */
-.tools {
+.stack {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 0 var(--s8);
-  margin-bottom: var(--s9);
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: var(--s6) var(--s7);
+  margin-bottom: var(--s7);
 }
-.tool { padding: var(--s5) 0; border-bottom: 1px solid var(--hair-2); }
-.tool dt { font-size: var(--t-base); font-weight: 600; letter-spacing: -0.02em; margin-bottom: var(--s2); }
-.tool dd { font-size: var(--t-sm); color: var(--text-2); }
+.stack-group { min-width: 0; }
+.stack-name {
+  font-size: var(--t-md);
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  margin-bottom: var(--s2);
+}
+.stack-note {
+  font-size: var(--t-sm);
+  color: var(--text-2);
+  margin-bottom: var(--s4);
+}
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chips li {
+  font-size: 13px;
+  color: var(--text);
+  background: rgba(255, 255, 255, .06);
+  border: 1px solid var(--hair-2);
+  border-radius: var(--r-pill);
+  padding: 6px 13px;
+  line-height: 1.3;
+  transition: background .25s var(--ease), border-color .25s var(--ease),
+              color .25s var(--ease), transform .25s var(--ease);
+}
+.chips li:hover {
+  background: rgba(10, 132, 255, .14);
+  border-color: rgba(10, 132, 255, .45);
+  color: #fff;
+  transform: translateY(-2px);
+}
 
 .creds { border-top: 1px solid var(--hair-2); }
 .creds li { border-bottom: 1px solid var(--hair-2); }
@@ -536,7 +571,7 @@ a:hover .chev, .btn:hover .chev { transform: translateX(3px); }
 .about {
   display: grid;
   grid-template-columns: minmax(0, 1.35fr) minmax(0, .9fr);
-  gap: var(--s9);
+  gap: var(--s8);
   align-items: center;
 }
 .portrait { margin: 0; }
@@ -803,4 +838,48 @@ body.is-locked { overflow: hidden; }
 .field input:not(:focus):not(:placeholder-shown) + label,
 .field textarea:not(:focus):not(:placeholder-shown) + label {
   color: var(--text-3);
+}
+
+
+/* ============================================================
+   Cross-device hardening
+   ============================================================ */
+
+/* long strings (emails, URLs) must never push the layout wide */
+.ch-val, .cred-name, .case-text, .prose, .stack-note {
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+/* iOS: stop Safari inflating text in landscape, and kill the grey tap flash */
+html { -webkit-text-size-adjust: 100%; }
+body { -webkit-tap-highlight-color: transparent; }
+
+/* iOS zooms the page in when an input is smaller than 16px. Ours is 17px,
+   but the label shrinks, so pin the field itself. */
+.field input, .field textarea { font-size: max(16px, var(--t-base)); }
+
+/* comfortable touch targets on phones */
+@media (pointer: coarse) {
+  .nav a, .channels a, .creds a { min-height: 44px; }
+  .chips li { padding: 8px 14px; }
+  .viz-replay { padding: 8px 4px; }
+}
+
+@media (max-width: 640px) {
+  /* let the headline wrap naturally instead of at my chosen break */
+  .hero-title br, .sec-title br { display: none; }
+
+  .stack { grid-template-columns: minmax(0, 1fr); }
+  .stats { gap: var(--s6); }
+  .case-body { padding: var(--s5); }
+  .viz-chart .xtitle { display: none; }
+}
+
+@media (max-width: 420px) {
+  .viz-kpis { grid-template-columns: minmax(0, 1fr); }
+  .kpi { display: flex; align-items: baseline; gap: var(--s3); }
+  .kpi-lab { margin-top: 0; }
+  .chips li { font-size: 12px; }
+  .shell, .nav-inner, .hero { padding-left: var(--s4); padding-right: var(--s4); }
 }
