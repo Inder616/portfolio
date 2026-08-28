@@ -53,8 +53,8 @@
     </nav>
 
     <div class="nav-actions">
-      <!-- EDIT: add resume.pdf to the repo root, or point this at a Drive link. -->
-      <a class="btn btn-blue btn-sm" href="resume.pdf" download>Résumé</a>
+      <!-- Points at Inder_CV.pdf in the repo root. If you rename the file, change it here and in the hero button too. -->
+      <a class="btn btn-blue btn-sm" href="Inder_CV.pdf" download>Résumé</a>
       <button class="menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="nav" aria-label="Open menu">
         <span></span><span></span>
       </button>
@@ -79,6 +79,8 @@
 
     <div class="hero-actions" data-rise="4">
       <a class="btn btn-blue" href="#work">See the work</a>
+      <!-- Points at Inder_CV.pdf in the repo root. Swap for a Drive link if you prefer. -->
+      <a class="btn btn-line" href="Inder_CV.pdf" download>Download résumé</a>
       <a class="btn btn-plain" href="#contact">Get in touch <span class="chev" aria-hidden="true">›</span></a>
     </div>
 
@@ -425,36 +427,67 @@
     <div class="shell">
       <header class="sec-head">
         <p class="eyebrow">Skills</p>
-        <h2 class="sec-title">What I reach for.</h2>
-        <p class="sec-lede">No percentage bars. What each area has actually done in the work above.</p>
+        <h2 class="sec-title">The stack.</h2>
+        <p class="sec-lede">No percentage bars. The tools I actually work in, and what each one has done.</p>
       </header>
 
-      <dl class="tools">
-        <div class="tool">
-          <dt>SQL &amp; databases</dt>
-          <dd>Oracle and PostgreSQL. Joins, subqueries, CTEs, window functions and query tuning across large tables.</dd>
+      <div class="stack">
+
+        <div class="stack-group">
+          <h3 class="stack-name">Databases &amp; SQL</h3>
+          <p class="stack-note">Ranked a job market by pay within role families, and pulled reporting into a single read-only query.</p>
+          <ul class="chips">
+            <li>SQL</li><li>Oracle</li><li>PostgreSQL</li><li>Joins</li><li>Subqueries</li>
+            <li>CTEs</li><li>Window functions</li><li>Query tuning</li><li>Oracle APEX</li>
+          </ul>
         </div>
-        <div class="tool">
-          <dt>Power BI</dt>
-          <dd>DAX, Power Query (M), star-schema modelling, drill-through, scheduled refresh and Power BI Service.</dd>
+
+        <div class="stack-group">
+          <h3 class="stack-name">BI &amp; visualisation</h3>
+          <p class="stack-note">Measures that stay correct under every slicer, on models built to be refreshed rather than rebuilt.</p>
+          <ul class="chips">
+            <li>Power BI</li><li>DAX</li><li>Power Query (M)</li><li>Star schema</li>
+            <li>Drill-through</li><li>Scheduled refresh</li><li>Power BI Service</li><li>Tableau</li>
+          </ul>
         </div>
-        <div class="tool">
-          <dt>Python</dt>
-          <dd>pandas, NumPy and Matplotlib for cleaning and automation. Processed 111K+ healthcare and 10,000+ farmer records.</dd>
+
+        <div class="stack-group">
+          <h3 class="stack-name">Python &amp; tooling</h3>
+          <p class="stack-note">Cleaned and reshaped 111K+ healthcare records and 10,000+ farmer records before they ever reached a dashboard.</p>
+          <ul class="chips">
+            <li>Python</li><li>pandas</li><li>NumPy</li><li>Matplotlib</li>
+            <li>Jupyter</li><li>Git</li><li>GitHub</li><li>VS Code</li>
+          </ul>
         </div>
-        <div class="tool">
-          <dt>Advanced Excel</dt>
-          <dd>Power Pivot, Power Query, XLOOKUP and INDEX-MATCH. Dynamic dashboards that refresh on new data.</dd>
+
+        <div class="stack-group">
+          <h3 class="stack-name">Spreadsheets</h3>
+          <p class="stack-note">A salary tracker across 111 countries that refreshes on new data instead of being retyped.</p>
+          <ul class="chips">
+            <li>Advanced Excel</li><li>Power Pivot</li><li>Power Query</li><li>Pivot tables</li>
+            <li>XLOOKUP</li><li>INDEX-MATCH</li><li>Google Sheets</li>
+          </ul>
         </div>
-        <div class="tool">
-          <dt>Data handling</dt>
-          <dd>ETL logic, multi-source integration, de-duplication, validation and governance, with documentation to match.</dd>
+
+        <div class="stack-group">
+          <h3 class="stack-name">Analytics</h3>
+          <p class="stack-note">Isolating the one variable that moves the outcome, then saying what to do about it.</p>
+          <ul class="chips">
+            <li>KPI definition</li><li>Funnel analysis</li><li>Conversion analysis</li><li>Segmentation</li>
+            <li>Root-cause analysis</li><li>EDA</li><li>Turnaround time</li><li>Statistical analysis</li>
+          </ul>
         </div>
-        <div class="tool">
-          <dt>Analytics &amp; business</dt>
-          <dd>KPI definition, funnel and conversion analysis, root-cause work, segmentation and stakeholder communication.</dd>
+
+        <div class="stack-group">
+          <h3 class="stack-name">Data handling</h3>
+          <p class="stack-note">The unglamorous half: making sure the number is right before anyone acts on it.</p>
+          <ul class="chips">
+            <li>ETL logic</li><li>Multi-source integration</li><li>De-duplication</li>
+            <li>Data validation</li><li>Data governance</li><li>Documentation</li>
+          </ul>
         </div>
-      </dl>
+
+      </div>
 
       <ul class="creds">
         <li>
